@@ -2,15 +2,26 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>
-		$_REQUEST存取表單資料測試
-	</title>
+  <style>
+  body{
+    height: 100%
+}
+.wrapper{
+    min-height: 100%;
+}
+  .footer{
+    
+    
+    padding: 0 0 30px;
+    text-align: center;
+}
+  </style>
 </head>
 <body>
 <hr>
 
 
-<div style="text-align:center">
+<div id="footer">
   <span>
    <a href='/'>回到我的網站</a>
   </span>

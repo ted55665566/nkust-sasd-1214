@@ -3,25 +3,15 @@
 <head>
 	<meta charset="utf-8"/>
   <style>
-  body{
-    height: 100%
-}
-.wrapper{
-    min-height: 100%;
-}
-  .footer{
-    
-    
-    padding: 0 0 30px;
-    text-align: center;
-}
+
+
   </style>
 </head>
 <body>
 <hr>
 
 
-<div id="footer">
+<div style='text-align:center'>
   <span>
    <a href='/'>回到我的網站</a>
   </span>

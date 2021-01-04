@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlayListController;
+use App\Http\Controllers\Maincontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +14,10 @@ use App\Http\Controllers\PlayListController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/playlist/', [PlayListController::class, 'index']);
+Route::get('/', [Maincontroller::class,"index"]);
+Route::post('/insert/', [Maincontroller::class,"insert"]);
+
+// Route::get('/playlist/', [PlayListController::class, 'index']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PlayListController;
+// use App\Http\Controllers\PlayListController;
 use App\Http\Controllers\Maincontroller;
+use App\Http\Controllers\Lottocontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,9 @@ use App\Http\Controllers\Maincontroller;
 
 Route::get('/', [Maincontroller::class,"index"]);
 Route::post('/insert/', [Maincontroller::class,"insert"]);
+Route::get('lotto/',[Lottocontroller::class,"lotto"]);
 
-// Route::get('/playlist/', [PlayListController::class, 'index']);
-
+Route::get('/mylogout/',[Maincontroller::class,"logout"]);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

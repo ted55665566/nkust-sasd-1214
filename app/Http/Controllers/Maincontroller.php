@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Headlines;
+
 class Maincontroller extends Controller
 {
     //
@@ -17,8 +18,12 @@ class Maincontroller extends Controller
         $data = new Headlines;
         $data ->title = $title;
         $data ->save();
-        $titles = Headlines::all();
-        return view("index",compact('titles'));
+        
+        return redirect('/');
 
+    }
+    function logout(){
+        Auth::logout();
+        return redirect('/');
     }
 }

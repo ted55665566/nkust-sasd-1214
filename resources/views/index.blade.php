@@ -54,15 +54,18 @@
      @endauth
      <table class="table table-bordered">
             <tr><th>編號</th><th>馬路消息</th><th>時間</th><th>更新時間</th>
+            @auth
             <th>管理</th>
+            @endauth
      @foreach($titles as $item)
        <tr>
          <td>{{$item->id}}</td>
         <td>{{ $item->title}}</td>
         <td>{{$item->created_at}}</td>
         <td>{{$item->updated_at}}</td>
+        @auth
         <td><a href={{'/delete' .$item->id}}><button type="button" class="btn btn-info">刪除</button></a></td>
-        
+        @endauth
        </tr> 
      @endforeach
      </table>

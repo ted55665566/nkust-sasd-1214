@@ -14,14 +14,13 @@ class Maincontroller extends Controller
     }
 
     function insert(Request $req){
-        
         $title = $req->input('title');
          
         $data = new Headlines;
         $data ->title = $title;
         $data ->save();
         
-        return view("index",compact('titles'));
+        return redirect('/');
 
     }
     function logout(){

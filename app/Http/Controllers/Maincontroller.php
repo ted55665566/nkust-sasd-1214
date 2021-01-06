@@ -21,7 +21,7 @@ class Maincontroller extends Controller
         $data ->title = $title;
         $data ->save();
         
-        return redirect('/');
+        return view("index",compact('titles'));
 
     }
     function logout(){

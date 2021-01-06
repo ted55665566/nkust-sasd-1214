@@ -14,7 +14,9 @@ class Maincontroller extends Controller
     }
 
     function insert(Request $req){
+        
         $title = $req->input('title');
+         
         $data = new Headlines;
         $data ->title = $title;
         $data ->save();
@@ -25,5 +27,11 @@ class Maincontroller extends Controller
     function logout(){
         Auth::logout();
         return redirect('/');
+    }
+
+    function delete($id){
+       $data = Headlines::find($id);
+       $data->delete();
+       return redirect('/');
     }
 }

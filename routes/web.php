@@ -17,9 +17,11 @@ use App\Http\Controllers\Lottocontroller;
 
 Route::get('/', [Maincontroller::class,"index"]);
 Route::post('/insert/', [Maincontroller::class,"insert"]);
-Route::get('lotto/',[Lottocontroller::class,"lotto"]);
+Route::get('/lotto/',[Lottocontroller::class,"lotto"]);
+
+Route::get('/delete/{id}',[Maincontroller::class,"delete"]);
 
 Route::get('/mylogout/',[Maincontroller::class,"logout"]);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/');
 })->name('dashboard');

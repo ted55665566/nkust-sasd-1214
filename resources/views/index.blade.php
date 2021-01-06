@@ -48,17 +48,21 @@
      @auth
      <form method="post" action="/insert/">
         @csrf
-     最新消息:<input type=text size=40 name=title>
+     最新消息:<input type=text size=40 name=title required="required">
      <input type=submit value="新增">
      </form>
      @endauth
-     <table class="table table-striped">
-            <tr><th>編號</th><th>馬路消息</th><th>時間</th>
+     <table class="table table-bordered">
+            <tr><th>編號</th><th>馬路消息</th><th>時間</th><th>更新時間</th>
+            <th>管理</th>
      @foreach($titles as $item)
        <tr>
          <td>{{$item->id}}</td>
         <td>{{ $item->title}}</td>
         <td>{{$item->created_at}}</td>
+        <td>{{$item->updated_at}}</td>
+        <td><a href={{'delete/' .$item->id}}><button type="button" class="btn btn-info">刪除</button></a></td>
+        
        </tr> 
      @endforeach
      </table>
@@ -66,7 +70,7 @@
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
     
-
+    
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 

@@ -46,7 +46,7 @@
       </div>
      </nav>
      @auth
-     <form method="post" action="/insert/">
+     <form method="post" action="/insert">
         @csrf
      最新消息:<input type=text size=40 name=title>
      <input type=submit value="新增">
@@ -61,7 +61,7 @@
         <td>{{ $item->title}}</td>
         <td>{{$item->created_at}}</td>
         <td>{{$item->updated_at}}</td>
-        <td><a href={{'delete/' .$item->id}}><button type="button" class="btn btn-info">刪除</button></a></td>
+        <td><a href={{'/delete' .$item->id}}><button type="button" class="btn btn-info">刪除</button></a></td>
         
        </tr> 
      @endforeach

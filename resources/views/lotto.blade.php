@@ -12,7 +12,7 @@
 
 <h2>以下是我的樂透號碼</h2>
 <ul>
-@foreach ($numbers as $item)
+@foreach ($lottery as $item)
 <li>{{ $item }}</li>
 @endforeach
 </ul>

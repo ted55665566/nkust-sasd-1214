@@ -37,7 +37,7 @@
 
          @auth
          <li class="nav-item">
-          <a class="nav-link" href="/mylogout">登出</a>
+          <a class="nav-link" href='/mylogout'>登出</a>
          @endauth
          </li>
          
@@ -64,7 +64,7 @@
         <td>{{$item->created_at}}</td>
         <td>{{$item->updated_at}}</td>
         @auth
-        <td><a href={{'/delete' .$item->id}}><button type="button" class="btn btn-info">刪除</button></a></td>
+        <td><a href={{'delete/' .$item->id}}><button type="button" class="btn btn-info">刪除</button></a></td>
         @endauth
        </tr> 
      @endforeach

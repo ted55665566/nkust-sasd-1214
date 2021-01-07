@@ -38,9 +38,8 @@
          @auth
          <li class="nav-item">
           <a class="nav-link" href='/mylogout'>登出</a>
-         @endauth
          </li>
-         
+          @endauth
         </ul>
        </div>
       </div>
